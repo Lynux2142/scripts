@@ -30,7 +30,7 @@ done
 git commit -m "$CHOIX"
 echo
 read -p 'push branch : (press enter to master) ' CHOIX
-if [[ -n $CHOIX ]]
+if [[ -z $CHOIX ]]
 then
 	echo BONJOUR
 	git push origin master
