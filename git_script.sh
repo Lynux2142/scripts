@@ -3,11 +3,12 @@
 RETRY="y"
 while [[ -n $RETRY ]]
 do
-	git status
 	if [[ `git status | grep "nothing to commit"` ]]
 	then
 		echo "Rien a push."
 		exit
+	else
+		git status
 	fi
 	echo
 	read -p 'files to add ? (press enter to skip) ' CHOIX
