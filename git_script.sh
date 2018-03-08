@@ -5,7 +5,7 @@ while [[ -n $RETRY ]]
 do
 	if [[ `git status | grep "nothing to commit"` ]]
 	then
-		echo "Rien a ajouter."
+		echo "Nothing to add."
 		exit
 	else
 		git status
