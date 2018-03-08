@@ -33,7 +33,7 @@ done
 git commit -m "$choix"
 
 echo
-read -p 'push branch : (press enter to master)' choix
+read -p 'push branch : (press enter to master) ' choix
 if [[ -n $choix ]]
 then
 	git push origin master
