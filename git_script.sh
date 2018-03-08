@@ -25,7 +25,7 @@ do
 	fi
 
 	echo
-	read -p 'do you want to retry ? (press enter for no) ' RETRY
+	read -p 'do you want to retry ? (press enter for no, write something for yes) ' RETRY
 done
 
 git status
