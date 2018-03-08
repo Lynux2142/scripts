@@ -32,7 +32,6 @@ echo
 read -p 'push branch : (press enter to master) ' CHOIX
 if [[ -z $CHOIX ]]
 then
-	echo BONJOUR
 	git push origin master
 else
 	git push origin $CHOIX
