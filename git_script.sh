@@ -1,42 +1,49 @@
 #!/bin/sh
 
-git status
+RETRY="y"
 
-echo
-read -p 'files to add ? (press enter to skip) ' choix
-
-if [[ -n $choix ]]
-then
-	git add $choix
-fi
-
-git status
-
-echo
-read -p 'files to remove ? (press enter to skip) ' choix
-
-if [[ -n $choix ]]
-then
-	git reset $choix
-fi
-
-git status
-
-echo
-read -p 'commit message : ' choix
-
-while [[ -z $choix ]]
+while [[ -n $RETRY ]]
 do
-	read -p 'please write something : ' choix
+	git status
+
+	echo
+	read -p 'files to add ? (press enter to skip) ' CHOIX
+
+	if [[ -n $CHOIX ]]
+	then
+		git add $CHOIX
+	fi
+
+	git status
+
+	echo
+	read -p 'files to remove ? (press enter to skip) ' CHOIX
+
+	if [[ -n $CHOIX ]]
+	then
+		git reset $CHOIX
+	fi
+
+	read -p 'do you want to retry ? (press enter for no) ' RETRY
 done
 
-git commit -m "$choix"
+git status
 
 echo
-read -p 'push branch : (press enter to master) ' choix
-if [[ -n $choix ]]
+read -p 'commit message : ' CHOIX
+
+while [[ -z $CHOIX ]]
+do
+	read -p 'please write something : ' CHOIX
+done
+
+git commit -m "$CHOIX"
+
+echo
+read -p 'push branch : (press enter to master) ' CHOIX
+if [[ -n $CHOIX ]]
 then
 	git push origin master
 else
-	git push origin $choix
+	git push origin $CHOIX
 fi
