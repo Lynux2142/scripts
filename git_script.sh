@@ -32,8 +32,8 @@ echo
 read -p 'push branch : (press enter to master) ' CHOIX
 if [[ -n $CHOIX ]]
 then
-	git push origin master
 	echo BONJOUR
+	git push origin master
 else
 	git push origin $CHOIX
 fi
