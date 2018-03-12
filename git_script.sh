@@ -1,6 +1,7 @@
 #!/bin/sh
 
 RETRY="y"
+
 while [[ -n $RETRY ]]
 do
 	if [[ `git status | grep "nothing to commit"` ]]
