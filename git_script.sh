@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 RETRY="y"
 while [[ -n $RETRY ]]
