@@ -24,7 +24,7 @@ do
 		git reset $CHOIX
 	fi
 	echo
-	read -n1 -p 'retry ? (press enter for no, something for yes) ' RETRY
+	read -n 1 -p 'retry ? (press enter for no, something for yes) ' RETRY
 done
 git status
 echo
