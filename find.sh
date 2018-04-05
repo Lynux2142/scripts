@@ -1,9 +1,9 @@
 #!/bin/sh
 
-if [[ ($1 != ~/* && $1 != /* && $1 != ./*) || $2 == "" ]]
+if [[ ($1 != ~/* && $1 != /* && $1 != ./* && $1 != ../* ) || $2 == "" ]]
 then
-	echo "usage: find start[/, ~/, ./][path] [\"word_to_find\"]"
-	if [[ ($1 != ~/* && $1 != /* && $1 != ./*) && $2 == "" ]]
+	echo "usage: find start[/, ~/, ./, ../][path] [\"word_to_find\"]"
+	if [[ ($1 != ~/* && $1 != /* && $1 != ./* && $1 != ../* ) && $2 == "" ]]
 	then
 		echo "\n[word_to_find] options:"
 		echo "	- Use '*' to replace a string"
