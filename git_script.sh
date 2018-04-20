@@ -22,6 +22,7 @@ do
 	if [[ -n $CHOIX ]]
 	then
 		git reset -- $CHOIX
+		git status
 	fi
 	echo
 	read -n 1 -p 'retry ? (press enter for no, something for yes) ' RETRY
