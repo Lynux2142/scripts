@@ -21,7 +21,7 @@ do
 	read -p 'files to remove ? (press enter to skip) ' CHOIX
 	if [[ -n $CHOIX ]]
 	then
-		git reset $CHOIX
+		git reset -- $CHOIX
 	fi
 	echo
 	read -n 1 -p 'retry ? (press enter for no, something for yes) ' RETRY
