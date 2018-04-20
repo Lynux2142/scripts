@@ -1,5 +1,6 @@
 #!/bin/bash
 
+BRANCH=`git branch | grep "*" | cut -c3-`
 RETRY="y"
 while [[ -n $RETRY ]]
 do
@@ -36,10 +37,9 @@ do
 done
 git commit -m "$CHOIX"
 echo
-read -p 'push branch : (press enter to actual branch) ' CHOIX
+read -p 'push branch : (press enter to $BRANCH) ' CHOIX
 if [[ -z $CHOIX ]]
 then
-	BRANCH=`git branch | grep "*" | cut -c3-`
 	git push origin $BRANCH
 else
 	git push origin $CHOIX
