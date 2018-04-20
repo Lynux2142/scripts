@@ -39,7 +39,7 @@ echo
 read -p 'push branch : (press enter to actual branch) ' CHOIX
 if [[ -z $CHOIX ]]
 then
-	BRANCH=`git branch | grep "*" | cut -c3-`
+	BRANCH=git branch | grep "*" | cut -c3-
 	echo $BRANCH
 else
 	git push origin $CHOIX
