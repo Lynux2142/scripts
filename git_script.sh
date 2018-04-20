@@ -37,7 +37,7 @@ do
 done
 git commit -m "$CHOIX"
 echo
-read -p 'push branch : (press enter to $BRANCH) ' CHOIX
+read -p "push branch : (press enter to $BRANCH) " CHOIX
 if [[ -z $CHOIX ]]
 then
 	git push origin $BRANCH
