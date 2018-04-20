@@ -12,28 +12,28 @@ do
 		git status
 	fi
 	echo
-	read -p 'files to add ? (press enter to skip) ' CHOIX
+	read -p "files to add ? (press enter to skip) " CHOIX
 	if [[ -n $CHOIX ]]
 	then
 		git add $CHOIX
 	fi
 	git status
 	echo
-	read -p 'files to remove ? (press enter to skip) ' CHOIX
+	read -p "files to remove ? (press enter to skip) " CHOIX
 	if [[ -n $CHOIX ]]
 	then
 		git reset -- $CHOIX
 		git status
 	fi
 	echo
-	read -n 1 -p 'retry ? (press enter for no, something for yes) ' RETRY
+	read -n 1 -p "retry ? (press enter for no, something for yes) " RETRY
 done
 git status
 echo
-read -p 'commit message : ' CHOIX
+read -p "commit message : " CHOIX
 while [[ -z $CHOIX ]]
 do
-	read -p 'please write something : ' CHOIX
+	read -p "please write something : " CHOIX
 done
 git commit -m "$CHOIX"
 echo
