@@ -36,10 +36,11 @@ do
 done
 git commit -m "$CHOIX"
 echo
-read -p 'push branch : (press enter to master) ' CHOIX
+read -p 'push branch : (press enter to actual branch) ' CHOIX
 if [[ -z $CHOIX ]]
 then
-	git push origin master
+	BRANCH = git branch | grep "*" | cut -c3-
+	echo $BRANCH
 else
 	git push origin $CHOIX
 fi
