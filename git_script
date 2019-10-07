@@ -2,6 +2,7 @@
 
 BRANCH=`git branch | grep "*" | cut -c3-`
 RETRY="y"
+
 while [[ -n $RETRY ]]
 do
 	if [[ `git status | grep "nothing to commit"` ]]
