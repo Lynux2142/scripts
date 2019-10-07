@@ -5,7 +5,7 @@ RETRY="y"
 
 while [[ -n $RETRY ]]
 do
-	if [[ `git status | grep "nothing to commit"` ]]
+	if [[ `git status | grep "rien à valider"` || `git status | grep "nothing to commit"` ]]
 	then
 		echo "Nothing to add."
 		exit
@@ -45,3 +45,4 @@ then
 else
 	git push origin $CHOIX
 fi
+
