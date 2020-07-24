@@ -3,6 +3,11 @@
 BRANCH=`git branch | grep "*" | cut -c3-`
 RETRY="y"
 
+if [[ -z $BRANCH ]]
+then
+	exit
+fi
+
 while [[ -n $RETRY ]]
 do
 	if [[ `git status | grep "rien à valider"` || `git status | grep "nothing to commit"` ]]
