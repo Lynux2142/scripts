@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [[ ! -d ".git" ]]
+then
+	echo "Error: not a git repository."
+	exit
+fi
+
 BRANCH=`git branch | grep "*" | cut -c3-`
 RETRY="y"
 
