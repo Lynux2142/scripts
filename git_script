@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#bonjour
-
 function auto_push {
 	BRANCH=`git branch | grep "*" | cut -c3-`
 	RETRY="y"
